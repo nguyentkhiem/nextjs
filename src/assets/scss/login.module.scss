@@ -1,0 +1,32 @@
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+
+  .formGroup {
+    label {
+      display: block;
+    }
+  }
+
+  .inputLogin {
+    height: 40px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+  }
+  .validateMess {
+    color: red;
+  }
+  .btnSubmit {
+    background-color: burlywood;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
