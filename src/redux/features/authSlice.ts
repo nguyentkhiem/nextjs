@@ -1,6 +1,6 @@
 import Cookie from 'js-cookie'
 import { LoginPayload } from '@/types/auth.type'
-import AuthServices from '@/services/auth.service'
+// import AuthServices from '@/services/auth.service'
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
 
 type AuthState = {
