@@ -39,5 +39,5 @@ export default function ReactPortal({
   // wrapperElement state will be null on the very first render.
   if (wrapperElement === null) return null
 
-  return createPortal(children, wrapperElement)
+  return createPortal(children as any, wrapperElement)
 }
