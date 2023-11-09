@@ -18,7 +18,7 @@ const Breadcrumbs = ({ data }: BreadcrumbsProps) => {
               <span
                 onClick={() => router.push(e?.url)}
                 style={{ color: e?.url === path ? 'blue' : '#000' }}
-                className="ml-1 cursor-pointer text-sm font-medium hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                className="ml-1 mr-4 cursor-pointer text-sm font-medium hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white"
               >
                 {e?.title}
               </span>

@@ -1,18 +1,24 @@
 'use client'
 
+import i18next from 'i18next'
 import { LANGUAGES } from '@/constants/common'
-import { changeLng } from '@/redux/features/lngSlice'
-import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { LOCAL_STORAGES } from '@/constants/variables'
 
 const ChangeLng = () => {
-  const lng = useAppSelector((state) => state.lngReducer.lng)
-  const dispatch = useAppDispatch()
+  const LANG = localStorage.getItem(LOCAL_STORAGES.LANG) || 'en'
+
+  const onChange = (value: string) => {
+    i18next.changeLanguage(value?.toString()).then((t) => {
+      // set locale to localstorage
+      localStorage.setItem(LOCAL_STORAGES.LANG, value)
+    })
+  }
 
   return (
     <select
-      defaultValue={lng}
+      defaultValue={LANG}
       onChange={(e: any) => {
-        dispatch(changeLng(e.target.value))
+        onChange(e.target.value)
       }}
       className="p-1 bg-white text-blue-400 border border-blue-400 rounded-sm"
     >

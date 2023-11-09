@@ -13,12 +13,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const path = usePathname()
-
   const [breadcrumbs, setBreadCrumbs] = useState<MenuItemType[]>([])
 
   useEffect(() => {
     const newArr: MenuItemType[] | undefined = []
-    newArr.push({ id: 0, title: 'Admin', url: '/admin' })
+    // newArr.push({ id: 0, title: 'Admin', url: '/admin' })
     MENU_ITEMS?.map((e: MenuItemType) => {
       const dataMatch: MenuItemType | undefined = e.children?.find(
         (el: MenuItemType) => el.url === path
@@ -43,7 +42,6 @@ export default function RootLayout({
   return (
     <div className="flex h-screen">
       <Header />
-
       <Sidebar />
       <div className="w-full ml-60 mt-10">
         <div className="ml-10 mt-10">

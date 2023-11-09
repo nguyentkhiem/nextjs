@@ -2,5 +2,8 @@
   "title": "タイトル",
   "to-second-page": "2ページ目へ",
   "to-client-page": "クライアントページへ",
-  "login": "ログイン"
+  "login": "ログイン",
+  "username": "USERNAME / EMAIL JA",
+  "password": "PASSWORD JA",
+  "dashboard": "Dashboard JA"
 }

@@ -2,7 +2,7 @@ import { MenuItemType } from './../types/common.types'
 export const MENU_ITEMS: MenuItemType[] = [
   {
     id: 1,
-    title: 'Admin',
+    title: 'Manager',
     url: '/admin',
     children: [
       {

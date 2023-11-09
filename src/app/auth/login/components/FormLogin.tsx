@@ -1,14 +1,15 @@
 import { Formik } from 'formik'
-import styles from '@/assets/scss/login.module.scss'
 import * as Yup from 'yup'
 import { useAppDispatch } from '@/redux/hooks'
 import { handleLoginAsync } from '@/redux/features/authSlice'
 import { useRouter } from 'next/navigation'
+import styles from '@/assets/scss/login.module.scss'
+import { useTranslation } from 'react-i18next'
 
-const FormLogin = () => {
+function FormLogin() {
   const router = useRouter()
-
   const dispatch = useAppDispatch()
+  const { t } = useTranslation()
 
   return (
     <>
@@ -26,25 +27,32 @@ const FormLogin = () => {
         {({ errors, touched, handleSubmit, handleChange }) => (
           <form noValidate className={styles.formLogin} onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
-              <label>Username</label>
+              <label>{t('username')}</label>
               <input
                 name="username"
                 className={styles.inputLogin}
                 onChange={handleChange}
+                placeholder="USERNAME / EMAIL"
               />
               {errors.username && touched.username && (
-                <p className={styles.validateMess}>{errors.username}</p>
+                <p className={styles.validateMess}>
+                  {errors?.username?.toString()}
+                </p>
               )}
             </div>
             <div className={styles.formGroup} style={{ marginTop: 20 }}>
-              <label>Password</label>
+              <label>{t('password')}</label>
               <input
                 name="password"
+                type="password"
                 onChange={handleChange}
                 className={styles.inputLogin}
+                placeholder="********"
               />
               {errors.password && touched.password && (
-                <p className={styles.validateMess}>{errors.password}</p>
+                <p className={styles.validateMess}>
+                  {errors?.password?.toString()}
+                </p>
               )}
             </div>
             <button
@@ -52,7 +60,7 @@ const FormLogin = () => {
               style={{ marginTop: 20 }}
               className={styles.btnSubmit}
             >
-              submit
+              Login
             </button>
           </form>
         )}
