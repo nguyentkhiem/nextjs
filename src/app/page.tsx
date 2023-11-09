@@ -1,7 +1,7 @@
 'use client'
 
 import Cookies from 'js-cookie'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
 export default async function Page() {
@@ -13,7 +13,6 @@ export default async function Page() {
 
     if (!token) router.push(`/auth/login`)
   }, [router])
-
   return (
     <>
       {/* <h1>{t('title')}</h1>
