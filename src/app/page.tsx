@@ -1,11 +1,19 @@
 'use client'
-// import { useAppSelector } from '@/redux/hooks'
-// import Link from 'next/link'
-// import { useTranslation } from './i18n'
+
+import Cookies from 'js-cookie'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 export default async function Page() {
-  // const lng = useAppSelector((state) => state.lngReducer.lng)
-  // const { t } = await useTranslation(lng)
+  const router = useRouter()
+
+  useEffect(() => {
+    const token = Cookies.get('access-token')
+    if (token) router.push(`/admin`)
+
+    if (!token) router.push(`/auth/login`)
+  }, [router])
+
   return (
     <>
       {/* <h1>{t('title')}</h1>
