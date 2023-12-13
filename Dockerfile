@@ -1,4 +1,4 @@
-FROM node:16-alpine3.14
+FROM node:18.17.0-alpine3.17
 
 ENV APP_ROOT /app
 
@@ -10,6 +10,6 @@ RUN yarn
 
 ENV HOST 0.0.0.0
 
-EXPOSE 8888
+EXPOSE 5005
 
 CMD [ "yarn", "dev" ]
