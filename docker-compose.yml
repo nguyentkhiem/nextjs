@@ -1,16 +1,16 @@
-version: '3'
+version: "3"
 
 services:
   frontend:
     build: .
-    container_name: base-next-app-router
+    container_name: react-base
     restart: always
     ports:
-      - 8888:3000
+      - 3002:5005
 
   gitlab-runner:
-    image: 'gitlab/gitlab-runner:latest'
-    container_name: base-next-app-router-runner
+    image: "gitlab/gitlab-runner:latest"
+    container_name: react-base-runner
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./gilab-runner-config:/etc/gitlab-runner
